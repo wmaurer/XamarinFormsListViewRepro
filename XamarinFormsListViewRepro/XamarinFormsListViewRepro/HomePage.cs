@@ -20,7 +20,7 @@
             _listView = new ListView();
 
 // change to false, and it works
-#if false
+#if true
             var listViewStackLayout = new StackLayout { Padding = new Thickness(0, 20, 0, 0), Children = { _listView } };
             Content = new StackLayout { Children = { _button, _label, listViewStackLayout } };
             // uncomment the following line and it works
