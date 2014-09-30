@@ -37,7 +37,7 @@
                 Children = { _button, _label, listViewStackLayout }
             };
             // uncomment the following line and it works
-            this.OneWayBind(ViewModel, x => x.Number, x => x._label.Text);
+            //this.OneWayBind(ViewModel, x => x.Number, x => x._label.Text);
 #else
             Content = new StackLayout { Children = { _button, _label, _listView } };
 #endif
