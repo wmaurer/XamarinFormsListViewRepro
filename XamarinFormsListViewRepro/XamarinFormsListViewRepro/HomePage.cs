@@ -21,8 +21,19 @@
 
 // change to false, and it works
 #if true
-            var listViewStackLayout = new StackLayout { Padding = new Thickness(0, 20, 0, 0), Children = { _listView } };
-            Content = new StackLayout { Children = { _button, _label, listViewStackLayout } };
+            var listViewStackLayout = new StackLayout {
+                Orientation = StackOrientation.Vertical,
+                VerticalOptions = LayoutOptions.StartAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Padding = new Thickness(0, 20, 0, 0),
+                Children = { _listView }
+            };
+            Content = new StackLayout {
+                Orientation = StackOrientation.Vertical,
+                VerticalOptions = LayoutOptions.StartAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Children = { _button, _label, listViewStackLayout }
+            };
             // uncomment the following line and it works
             //this.OneWayBind(ViewModel, x => x.Number, x => x._label.Text);
 #else
