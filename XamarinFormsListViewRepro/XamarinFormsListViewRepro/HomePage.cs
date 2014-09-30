@@ -16,12 +16,13 @@
             ViewModel = new HomePageViewModel();
 
             _button = new Button { Text = "Click Me" };
-            _label = new Label();
-            _listView = new ListView();
+            _label = new Label { IsVisible = false };
+            _listView = new ListView { BackgroundColor = Color.Blue, HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.EndAndExpand };
 
 // change to false, and it works
 #if true
             var listViewStackLayout = new StackLayout {
+                BackgroundColor = Color.Red,
                 Orientation = StackOrientation.Vertical,
                 VerticalOptions = LayoutOptions.StartAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -29,13 +30,14 @@
                 Children = { _listView }
             };
             Content = new StackLayout {
+                BackgroundColor = Color.Green,
                 Orientation = StackOrientation.Vertical,
                 VerticalOptions = LayoutOptions.StartAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Children = { _button, _label, listViewStackLayout }
             };
             // uncomment the following line and it works
-            //this.OneWayBind(ViewModel, x => x.Number, x => x._label.Text);
+            this.OneWayBind(ViewModel, x => x.Number, x => x._label.Text);
 #else
             Content = new StackLayout { Children = { _button, _label, _listView } };
 #endif
