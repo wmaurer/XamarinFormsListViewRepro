@@ -11,6 +11,5 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HomePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)HomePageViewModel.cs" />
   </ItemGroup>
 </Project>
